@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VbE-fO-IJr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="GalleryGuru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Mp-df-jOS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="441"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6Mp-df-jOS" secondAttribute="height" multiplier="555:653" id="Mdb-Dy-4f8"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="J5v-PG-neJ">
+                                    <size key="itemSize" width="320" height="371"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="PreviewScreenCell" id="CUo-GO-hj0" customClass="PreviewScreenCell" customModule="GalleryGuru" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="35" width="320" height="371"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="371"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="previewScreen1" translatesAutoresizingMaskIntoConstraints="NO" id="fHG-Yr-wTF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="371"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="fHG-Yr-wTF" secondAttribute="bottom" id="3SD-r1-yEe"/>
+                                            <constraint firstItem="fHG-Yr-wTF" firstAttribute="leading" secondItem="CUo-GO-hj0" secondAttribute="leading" id="MU2-Be-Amw"/>
+                                            <constraint firstAttribute="trailing" secondItem="fHG-Yr-wTF" secondAttribute="trailing" id="mN0-Jc-s9C"/>
+                                            <constraint firstItem="fHG-Yr-wTF" firstAttribute="top" secondItem="CUo-GO-hj0" secondAttribute="top" id="vMM-GV-5CS"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="previewImage" destination="fHG-Yr-wTF" id="XKw-fb-rf6"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ete-UZ-yVF">
+                                <rect key="frame" x="168" y="441" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aln-qw-WHJ" customClass="LoginViaFacebook" customModule="GalleryGuru" customModuleProvider="target">
+                                <rect key="frame" x="100.5" y="508" width="174" height="36"/>
+                                <color key="backgroundColor" red="0.47843137254901957" green="0.79607843137254897" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login via Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNh-0i-oSn">
+                                <rect key="frame" x="140.5" y="564" width="94" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login later">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTouchLoginLater:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ps-C0-hEu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Mp-df-jOS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2km-Ud-wTB"/>
+                            <constraint firstAttribute="trailing" secondItem="6Mp-df-jOS" secondAttribute="trailing" id="EPu-fN-f5F"/>
+                            <constraint firstItem="LNh-0i-oSn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ent-90-45x"/>
+                            <constraint firstItem="Ete-UZ-yVF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OhD-fK-o6g"/>
+                            <constraint firstItem="Ete-UZ-yVF" firstAttribute="top" secondItem="6Mp-df-jOS" secondAttribute="bottom" id="eGS-o0-eId"/>
+                            <constraint firstItem="6Mp-df-jOS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eex-1c-ney"/>
+                            <constraint firstItem="LNh-0i-oSn" firstAttribute="top" secondItem="aln-qw-WHJ" secondAttribute="bottom" constant="20" id="gEu-bI-Jv4"/>
+                            <constraint firstItem="aln-qw-WHJ" firstAttribute="top" secondItem="Ete-UZ-yVF" secondAttribute="bottom" constant="30" id="iji-qa-AJQ"/>
+                            <constraint firstItem="aln-qw-WHJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ovF-Ue-iSh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qx2-hc-Qk2"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="loginLaterButton" destination="LNh-0i-oSn" id="DED-zW-yFP"/>
+                        <outlet property="previewImagesPageController" destination="Ete-UZ-yVF" id="UsE-GQ-tIT"/>
+                        <outlet property="previewScreenCollectionView" destination="6Mp-df-jOS" id="Efc-Jx-YqH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072.8" y="138.0809595202399"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UDE-Vs-XeS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VbE-fO-IJr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vGT-fV-iR7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fce-KL-g30"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Iv-Oo-uah" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="previewScreen1" width="277" height="326"/>
+    </resources>
+</document>
