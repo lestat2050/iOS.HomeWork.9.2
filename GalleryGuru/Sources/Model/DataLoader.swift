@@ -10,17 +10,48 @@ import Foundation
 
 class DataLoader {
     
-    private var galleries: [String: Gallery] = [:]
-    private var works: [String: Work] = [:]
+    var exhibitions: [Exhibition] = []
+    var galleries: [String: Gallery] = [:]
+    var works: [String: Work] = [:]
     
     func loadExhibition() -> [Exhibition] {
         
-        var exhibitions: [Exhibition] = []
-        
         let exhibitionsRawArray = loadItems(from: "exhibitions")
+        let galleriesRawArray = loadItems(from: "galleries")
+        let worksRawArray = loadItems(from: "works")
         
-        loadWork()
-        loadGallery()
+        worksRawArray.forEach {
+            let workID = $0["_id"] as! String
+            let work = Work(id: workID,
+                            size: $0["size"] as? String,
+                            title: $0["title"] as? String,
+                            imgPicture: $0["imgPicture"] as? String,
+                            type: $0["type"] as? String,
+                            author: $0["author"] as? String,
+                            galleryDescription: $0["schedule"] as? String,
+                            year: $0["year"] as? String)
+            
+            works[workID] = work
+        }
+        
+        galleriesRawArray.forEach {
+            let galleryID = $0["_id"] as! String
+            let gallery = Gallery(id: galleryID,
+                                  name: $0["name"] as! String,
+                                  galleryDescription: $0["galleryDescription"] as? String,
+                                  email: $0["email"] as? String,
+                                  facebook: $0["facebook"] as? String,
+                                  city: $0["city"] as? String,
+                                  schedule: $0["schedule"] as? [String],
+                                  address: $0["address"] as? String,
+                                  galleryLogo: $0["galleryLogo"] as? String,
+                                  link: $0["link"] as? String,
+                                  phone: $0["phone"] as? String,
+                                  latitude: $0["latitude"] as? String,
+                                  longitude: $0["longitude"] as? String)
+            
+            galleries[galleryID] = gallery
+        }
         
         exhibitions = exhibitionsRawArray.map {
             
@@ -52,51 +83,6 @@ class DataLoader {
         }
         
         return exhibitions
-    }
-    
-    private func loadWork() {
-        
-        let worksRawArray = loadItems(from: "works")
-        
-        worksRawArray.forEach {
-            let workID = $0["_id"] as! String
-            let work = Work(id: workID,
-                            size: $0["size"] as? String,
-                            title: $0["title"] as? String,
-                            imgPicture: $0["imgPicture"] as? String,
-                            type: $0["type"] as? String,
-                            author: $0["author"] as? String,
-                            galleryDescription: $0["schedule"] as? String,
-                            year: $0["year"] as? String)
-            
-            works[workID] = work
-        }
-        
-    }
-    
-    private func loadGallery() {
-        
-        let galleriesRawArray = loadItems(from: "galleries")
-        
-        galleriesRawArray.forEach {
-            let galleryID = $0["_id"] as! String
-            let gallery = Gallery(id: galleryID,
-                           name: $0["name"] as! String,
-                           galleryDescription: $0["galleryDescription"] as? String,
-                           email: $0["email"] as? String,
-                           facebook: $0["facebook"] as? String,
-                           city: $0["city"] as? String,
-                           schedule: $0["schedule"] as? [String],
-                           address: $0["address"] as? String,
-                           galleryLogo: $0["galleryLogo"] as? String,
-                           link: $0["link"] as? String,
-                           phone: $0["phone"] as? String,
-                           latitude: $0["latitude"] as? String,
-                           longitude: $0["longitude"] as? String)
-            
-            galleries[galleryID] = gallery
-        }
-    
     }
     
     private func loadItems(from fileName: String) -> [[String: Any]] {

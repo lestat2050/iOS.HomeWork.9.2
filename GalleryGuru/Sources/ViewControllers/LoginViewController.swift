@@ -10,12 +10,17 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    //MARK: - Outlets
+    // MARK: - Outlets
     
+    @IBOutlet private(set) weak var loginViaFacebook: UIButton! {
+        didSet {
+            loginViaFacebook.layer.cornerRadius = loginViaFacebook.frame.height / 2
+        }
+    }
     @IBOutlet private(set) weak var loginLaterButton: UIButton! {
         didSet {
             if let text = loginLaterButton.titleLabel!.text {
-                loginLaterButton.underlineButton(text: text)
+                loginLaterButton.underlineLabel(text: text)
             }
         }
     }
@@ -27,7 +32,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    //MARK: - Properties
+    // MARK: - Properties
     
     let loader = DataLoader()
     let previewScreenImages = [
@@ -40,19 +45,12 @@ class LoginViewController: UIViewController {
         return true
     }
     
-    //MARK: - Lifecycle
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    //MARK: - Actions
-    
-    @IBAction func onTouchLoginLater(_ sender: UIButton) {
-        let exhibitions = loader.loadExhibition()
-        print(exhibitions)
     }
     
 }
@@ -69,11 +67,12 @@ extension LoginViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension LoginViewController: UICollectionViewDelegate {
-
+    
     func collectionView(_ collectionView: UICollectionView,
-                        willDisplay cell: UICollectionViewCell,
+                        didEndDisplaying cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
-        self.previewImagesPageController.currentPage = indexPath.row
+        let indexPage = collectionView.contentOffset.x / collectionView.frame.width
+        self.previewImagesPageController.currentPage = Int(indexPage)
     }
 
 }
@@ -98,7 +97,7 @@ extension LoginViewController: UICollectionViewDataSource {
 }
 
 extension UIButton {
-    func underlineButton(text: String) {
+    func underlineLabel(text: String) {
         let titleString = NSMutableAttributedString(string: text)
         titleString.addAttribute(NSUnderlineStyleAttributeName,
                                  value: NSUnderlineStyle.styleSingle.rawValue,

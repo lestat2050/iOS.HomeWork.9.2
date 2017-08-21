@@ -20,7 +20,13 @@
 		D114808C1F3A2B9F00F2E34A /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114808B1F3A2B9F00F2E34A /* DataLoader.swift */; };
 		D114808E1F3A2FD800F2E34A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114808D1F3A2FD800F2E34A /* LoginViewController.swift */; };
 		D15ECA2F1F3EED06001F8381 /* PreviewScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15ECA2E1F3EED06001F8381 /* PreviewScreenCell.swift */; };
-		D19234751F44ACE2000B263C /* LoginViaFacebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19234741F44ACE2000B263C /* LoginViaFacebook.swift */; };
+		D17BD50F1F49AE9B00C1FB71 /* LoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BD50E1F49AE9B00C1FB71 /* LoadingVC.swift */; };
+		D17BD5111F49B04B00C1FB71 /* ExhibitionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BD5101F49B04B00C1FB71 /* ExhibitionListVC.swift */; };
+		D17BD5141F49B2B400C1FB71 /* ExhibitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BD5121F49B2B400C1FB71 /* ExhibitionCell.swift */; };
+		D17BD5151F49B2B400C1FB71 /* ExhibitionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D17BD5131F49B2B400C1FB71 /* ExhibitionCell.xib */; };
+		D17BD5171F4A0FFC00C1FB71 /* ExhibitionCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BD5161F4A0FFC00C1FB71 /* ExhibitionCellConfigurator.swift */; };
+		D17BD51A1F4A105100C1FB71 /* ConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BD5191F4A105100C1FB71 /* ConfiguratorProtocol.swift */; };
+		D17BD51C1F4A17CC00C1FB71 /* ExhibitionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BD51B1F4A17CC00C1FB71 /* ExhibitionDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +45,13 @@
 		D114808B1F3A2B9F00F2E34A /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		D114808D1F3A2FD800F2E34A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D15ECA2E1F3EED06001F8381 /* PreviewScreenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewScreenCell.swift; sourceTree = "<group>"; };
-		D19234741F44ACE2000B263C /* LoginViaFacebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViaFacebook.swift; sourceTree = "<group>"; };
+		D17BD50E1F49AE9B00C1FB71 /* LoadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingVC.swift; sourceTree = "<group>"; };
+		D17BD5101F49B04B00C1FB71 /* ExhibitionListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitionListVC.swift; sourceTree = "<group>"; };
+		D17BD5121F49B2B400C1FB71 /* ExhibitionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitionCell.swift; sourceTree = "<group>"; };
+		D17BD5131F49B2B400C1FB71 /* ExhibitionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExhibitionCell.xib; sourceTree = "<group>"; };
+		D17BD5161F4A0FFC00C1FB71 /* ExhibitionCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitionCellConfigurator.swift; sourceTree = "<group>"; };
+		D17BD5191F4A105100C1FB71 /* ConfiguratorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguratorProtocol.swift; sourceTree = "<group>"; };
+		D17BD51B1F4A17CC00C1FB71 /* ExhibitionDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitionDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				D114808D1F3A2FD800F2E34A /* LoginViewController.swift */,
+				D17BD50E1F49AE9B00C1FB71 /* LoadingVC.swift */,
+				D17BD5101F49B04B00C1FB71 /* ExhibitionListVC.swift */,
+				D17BD51B1F4A17CC00C1FB71 /* ExhibitionDetailVC.swift */,
 			);
 			name = ViewControllers;
 			path = Sources/ViewControllers;
@@ -120,18 +135,20 @@
 			isa = PBXGroup;
 			children = (
 				D15ECA2E1F3EED06001F8381 /* PreviewScreenCell.swift */,
+				D17BD5121F49B2B400C1FB71 /* ExhibitionCell.swift */,
+				D17BD5131F49B2B400C1FB71 /* ExhibitionCell.xib */,
+				D17BD5161F4A0FFC00C1FB71 /* ExhibitionCellConfigurator.swift */,
 			);
 			name = Cells;
 			path = Sources/Cells;
 			sourceTree = "<group>";
 		};
-		D19234731F44AC95000B263C /* Classes */ = {
+		D17BD5181F4A103100C1FB71 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				D19234741F44ACE2000B263C /* LoginViaFacebook.swift */,
+				D17BD5191F4A105100C1FB71 /* ConfiguratorProtocol.swift */,
 			);
-			name = Classes;
-			path = Sources/Classes;
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		D1D2DE751F41F79100EA0C5B /* Sources */ = {
@@ -141,7 +158,7 @@
 				D114807B1F3A296C00F2E34A /* VO */,
 				D11480831F3A2B1300F2E34A /* Model */,
 				D15ECA2D1F3EECB2001F8381 /* Cells */,
-				D19234731F44AC95000B263C /* Classes */,
+				D17BD5181F4A103100C1FB71 /* Protocols */,
 				D1D2DE781F41F7B900EA0C5B /* AppDelegate */,
 			);
 			name = Sources;
@@ -252,6 +269,7 @@
 				D11480701F3A288100F2E34A /* Assets.xcassets in Resources */,
 				D11480871F3A2B7300F2E34A /* exhibitions.json in Resources */,
 				D11480881F3A2B7300F2E34A /* galleries.json in Resources */,
+				D17BD5151F49B2B400C1FB71 /* ExhibitionCell.xib in Resources */,
 				D114806E1F3A288100F2E34A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,14 +281,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D17BD5171F4A0FFC00C1FB71 /* ExhibitionCellConfigurator.swift in Sources */,
 				D114808E1F3A2FD800F2E34A /* LoginViewController.swift in Sources */,
+				D17BD50F1F49AE9B00C1FB71 /* LoadingVC.swift in Sources */,
 				D114808C1F3A2B9F00F2E34A /* DataLoader.swift in Sources */,
 				D11480811F3A29E700F2E34A /* Work.swift in Sources */,
 				D114807D1F3A29C500F2E34A /* Exhibition.swift in Sources */,
-				D19234751F44ACE2000B263C /* LoginViaFacebook.swift in Sources */,
+				D17BD51A1F4A105100C1FB71 /* ConfiguratorProtocol.swift in Sources */,
 				D114807F1F3A29DA00F2E34A /* Gallery.swift in Sources */,
+				D17BD5141F49B2B400C1FB71 /* ExhibitionCell.swift in Sources */,
+				D17BD51C1F4A17CC00C1FB71 /* ExhibitionDetailVC.swift in Sources */,
 				D11480691F3A288100F2E34A /* AppDelegate.swift in Sources */,
 				D15ECA2F1F3EED06001F8381 /* PreviewScreenCell.swift in Sources */,
+				D17BD5111F49B04B00C1FB71 /* ExhibitionListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

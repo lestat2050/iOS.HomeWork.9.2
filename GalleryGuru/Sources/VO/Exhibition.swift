@@ -38,3 +38,5 @@ class Exhibition {
     
 }
 
+extension Exhibition: ExhibitionProtocol { }
+
