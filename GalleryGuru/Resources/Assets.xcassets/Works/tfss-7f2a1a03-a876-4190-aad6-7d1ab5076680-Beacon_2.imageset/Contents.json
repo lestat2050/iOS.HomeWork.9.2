@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-7f2a1a03-a876-4190-aad6-7d1ab5076680-Beacon_2.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-2a84976a-792d-4e47-b24d-5fa6d35765a6-eut_Akerman.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

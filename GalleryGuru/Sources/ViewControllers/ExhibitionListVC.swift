@@ -59,7 +59,7 @@ class ExhibitionListVC: UIViewController {
                                                bundle: nil),
                                          forCellReuseIdentifier: ExhibitionCell.identifier)
     }
-
+    
 }
 
 extension ExhibitionListVC: UITableViewDelegate {

@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-6194418b-7dfa-4532-8d23-e5c1553ed466-tiger.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

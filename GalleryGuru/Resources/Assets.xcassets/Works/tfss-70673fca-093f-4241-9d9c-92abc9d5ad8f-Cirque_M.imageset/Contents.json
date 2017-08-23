@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-70673fca-093f-4241-9d9c-92abc9d5ad8f-Cirque_M.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

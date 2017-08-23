@@ -13,11 +13,6 @@ class LoadingVC: UIViewController {
     // MARK: - Prorerties
     
     private let loader = DataLoader()
-    private var exhibitions: [Exhibition] = [] {
-        didSet {
-            showExhibition()
-        }
-    }
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -28,12 +23,18 @@ class LoadingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        exhibitions = loader.loadExhibition()
+        loadData()
     }
     
     // MARK: - Methods
     
-    private func showExhibition() {
+    func loadData() -> Void {
+        loader.loadExhibitions { (exhibitions: [Exhibition]) in
+            self.show(exhibitions)
+        }
+    }
+    
+    private func show(_ exhibitions: [Exhibition]) {
         guard let nc = navigationController else {
             fatalError("No Navigation Controller")
         }

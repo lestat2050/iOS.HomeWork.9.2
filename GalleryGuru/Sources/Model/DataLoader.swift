@@ -7,102 +7,83 @@
 //
 
 import Foundation
+import Alamofire
 
 class DataLoader {
     
-    var exhibitions: [Exhibition] = []
-    var galleries: [String: Gallery] = [:]
-    var works: [String: Work] = [:]
+    let exhibitionsRef = "https://gallery-guru-prod.herokuapp.com/exhibitions/"
     
-    func loadExhibition() -> [Exhibition] {
-        
-        let exhibitionsRawArray = loadItems(from: "exhibitions")
-        let galleriesRawArray = loadItems(from: "galleries")
-        let worksRawArray = loadItems(from: "works")
-        
-        worksRawArray.forEach {
-            let workID = $0["_id"] as! String
-            let work = Work(id: workID,
-                            size: $0["size"] as? String,
-                            title: $0["title"] as? String,
-                            imgPicture: $0["imgPicture"] as? String,
-                            type: $0["type"] as? String,
-                            author: $0["author"] as? String,
-                            galleryDescription: $0["schedule"] as? String,
-                            year: $0["year"] as? String)
-            
-            works[workID] = work
-        }
-        
-        galleriesRawArray.forEach {
-            let galleryID = $0["_id"] as! String
-            let gallery = Gallery(id: galleryID,
-                                  name: $0["name"] as! String,
-                                  galleryDescription: $0["galleryDescription"] as? String,
-                                  email: $0["email"] as? String,
-                                  facebook: $0["facebook"] as? String,
-                                  city: $0["city"] as? String,
-                                  schedule: $0["schedule"] as? [String],
-                                  address: $0["address"] as? String,
-                                  galleryLogo: $0["galleryLogo"] as? String,
-                                  link: $0["link"] as? String,
-                                  phone: $0["phone"] as? String,
-                                  latitude: $0["latitude"] as? String,
-                                  longitude: $0["longitude"] as? String)
-            
-            galleries[galleryID] = gallery
-        }
-        
-        exhibitions = exhibitionsRawArray.map {
-            
-            let galleryRawID = $0["_p_gallery"] as! String
-            let galleryID = galleryRawID.replacingOccurrences(of: "Gallery$", with: "")
-            let worksRawArray = $0["works"] as? [[String: Any]]
-            
-            var worksInExhibition: [Work] = []
-            
-            if let worksRawArray = worksRawArray {
-                worksRawArray.forEach {
-                    let workID = $0["objectId"] as! String
-                    if let work = works[workID] {
-                        worksInExhibition.append(work)
+    typealias ExibitionsLoadHandler = (_ exhibitions: [Exhibition]) -> Void
+    
+    func loadExhibitions(handler: @escaping ExibitionsLoadHandler) {
+        Alamofire.request(exhibitionsRef).responseJSON { response in
+            if let rawExhibitions = response.result.value as? [[String: Any]] {
+                
+                let exhibitions: [Exhibition] = rawExhibitions.map {
+                    
+                    let rawGallery = $0["gallery"] as? [String: Any]
+                    let rawWorks = $0["works"] as? [[String: Any]]
+                    
+                    var gallery: Gallery? = nil
+                    var works: [Work] = []
+                    
+                    if let rawWorks = rawWorks {
+                        works = rawWorks.map {
+                            
+                            let rawImgPicture = $0["imgPicture"] as? [String: Any]
+                            var imgPicture: String = ""
+                            if let rawImgPicture = rawImgPicture {
+                                imgPicture = rawImgPicture["name"] as! String
+                            }
+                            
+                            let work = Work(id: $0["objectId"] as! String,
+                                            size: $0["size"] as? String,
+                                            title: $0["title"] as? String,
+                                            imgPicture: imgPicture,
+                                            type: $0["type"] as? String,
+                                            author: $0["author"] as? String,
+                                            galleryDescription: $0["schedule"] as? String,
+                                            year: $0["year"] as? String)
+                            return work
+                        }
                     }
+                    
+                    if let rawGallery = rawGallery {
+                        gallery = Gallery(id: rawGallery["objectId"] as! String,
+                                          name: rawGallery["name"] as! String,
+                                          galleryDescription: rawGallery["galleryDescription"] as? String,
+                                          email: rawGallery["email"] as? String,
+                                          facebook: rawGallery["facebook"] as? String,
+                                          city: rawGallery["city"] as? String,
+                                          schedule: rawGallery["schedule"] as? [String],
+                                          address: rawGallery["address"] as? String,
+                                          galleryLogo: rawGallery["galleryLogo"] as? String,
+                                          link: rawGallery["link"] as? String,
+                                          phone: rawGallery["phone"] as? String,
+                                          latitude: rawGallery["latitude"] as? String,
+                                          longitude: rawGallery["longitude"] as? String)
+                    }
+                    
+                    let exhibition = Exhibition(id:$0["objectId"] as! String,
+                                                authorName: $0["authorName"] as? String,
+                                                gallery: gallery,
+                                                name: $0["name"] as! String,
+                                                authorDescription: $0["authorDescription"] as? String,
+                                                dateStart: Date.from(dateString: $0["dateStart"] as? String),
+                                                about: $0["about"] as? String,
+                                                dataEnd: Date.from(dateString: $0["dateEnd"] as? String),
+                                                works: works,
+                                                likesCount: $0["likesCount"] as? Int ?? 0)
+                    return exhibition
                 }
+                
+                handler(exhibitions)
             }
             
-            return Exhibition(id: $0["_id"] as! String,
-                              authorName: $0["authorName"] as? String,
-                              gallery: galleries[galleryID],
-                              name: $0["name"] as! String,
-                              authorDescription: $0["authorDescription"] as? String,
-                              dateStart: Date.from(dateString: $0["dateStart"] as? String),
-                              about: $0["authorName"] as? String,
-                              dataEnd: Date.from(dateString: $0["dataEnd"] as? String),
-                              works: worksInExhibition,
-                              likesCount: $0["likesCount"] as? Int ?? 0)
         }
         
-        return exhibitions
     }
-    
-    private func loadItems(from fileName: String) -> [[String: Any]] {
-        guard let url = Bundle.main.url(forResource: fileName,
-                                        withExtension: "json") else {
-                                            fatalError("No such file")
-        }
-        
-        guard let RawData = try? Data(contentsOf: url) else {
-            fatalError("Can't read data")
-        }
-        
-        guard let RawArray = try! JSONSerialization.jsonObject(with:
-            RawData) as? [[String: Any]] else {
-                fatalError("Wrong json format")
-        }
-        
-        return RawArray
-    }
-    
+
 }
 
 extension Date {

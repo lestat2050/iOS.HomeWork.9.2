@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FC93BFF152A8766666B260C /* Pods_GalleryGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C067438CB582BBE78D9881F /* Pods_GalleryGuru.framework */; };
 		D11480691F3A288100F2E34A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11480681F3A288100F2E34A /* AppDelegate.swift */; };
 		D114806E1F3A288100F2E34A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D114806C1F3A288100F2E34A /* Main.storyboard */; };
 		D11480701F3A288100F2E34A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D114806F1F3A288100F2E34A /* Assets.xcassets */; };
@@ -14,9 +15,6 @@
 		D114807D1F3A29C500F2E34A /* Exhibition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114807C1F3A29C500F2E34A /* Exhibition.swift */; };
 		D114807F1F3A29DA00F2E34A /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114807E1F3A29DA00F2E34A /* Gallery.swift */; };
 		D11480811F3A29E700F2E34A /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11480801F3A29E700F2E34A /* Work.swift */; };
-		D11480871F3A2B7300F2E34A /* exhibitions.json in Resources */ = {isa = PBXBuildFile; fileRef = D11480841F3A2B7300F2E34A /* exhibitions.json */; };
-		D11480881F3A2B7300F2E34A /* galleries.json in Resources */ = {isa = PBXBuildFile; fileRef = D11480851F3A2B7300F2E34A /* galleries.json */; };
-		D11480891F3A2B7300F2E34A /* works.json in Resources */ = {isa = PBXBuildFile; fileRef = D11480861F3A2B7300F2E34A /* works.json */; };
 		D114808C1F3A2B9F00F2E34A /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114808B1F3A2B9F00F2E34A /* DataLoader.swift */; };
 		D114808E1F3A2FD800F2E34A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114808D1F3A2FD800F2E34A /* LoginViewController.swift */; };
 		D15ECA2F1F3EED06001F8381 /* PreviewScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15ECA2E1F3EED06001F8381 /* PreviewScreenCell.swift */; };
@@ -30,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C067438CB582BBE78D9881F /* Pods_GalleryGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GalleryGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9323044CACE621FD80CA3C4 /* Pods-GalleryGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GalleryGuru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GalleryGuru/Pods-GalleryGuru.debug.xcconfig"; sourceTree = "<group>"; };
 		D11480651F3A288100F2E34A /* GalleryGuru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryGuru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11480681F3A288100F2E34A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D114806D1F3A288100F2E34A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,9 +39,6 @@
 		D114807C1F3A29C500F2E34A /* Exhibition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exhibition.swift; sourceTree = "<group>"; };
 		D114807E1F3A29DA00F2E34A /* Gallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		D11480801F3A29E700F2E34A /* Work.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
-		D11480841F3A2B7300F2E34A /* exhibitions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exhibitions.json; sourceTree = "<group>"; };
-		D11480851F3A2B7300F2E34A /* galleries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = galleries.json; sourceTree = "<group>"; };
-		D11480861F3A2B7300F2E34A /* works.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = works.json; sourceTree = "<group>"; };
 		D114808B1F3A2B9F00F2E34A /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		D114808D1F3A2FD800F2E34A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D15ECA2E1F3EED06001F8381 /* PreviewScreenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewScreenCell.swift; sourceTree = "<group>"; };
@@ -52,6 +49,7 @@
 		D17BD5161F4A0FFC00C1FB71 /* ExhibitionCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitionCellConfigurator.swift; sourceTree = "<group>"; };
 		D17BD5191F4A105100C1FB71 /* ConfiguratorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguratorProtocol.swift; sourceTree = "<group>"; };
 		D17BD51B1F4A17CC00C1FB71 /* ExhibitionDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitionDetailVC.swift; sourceTree = "<group>"; };
+		F1FCF21D5062369B310BB544 /* Pods-GalleryGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GalleryGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-GalleryGuru/Pods-GalleryGuru.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FC93BFF152A8766666B260C /* Pods_GalleryGuru.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011EA8F68F057EFBA808E9B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C067438CB582BBE78D9881F /* Pods_GalleryGuru.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99254393A675E126E0E931E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9323044CACE621FD80CA3C4 /* Pods-GalleryGuru.debug.xcconfig */,
+				F1FCF21D5062369B310BB544 /* Pods-GalleryGuru.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D114805C1F3A288100F2E34A = {
 			isa = PBXGroup;
 			children = (
 				D11480671F3A288100F2E34A /* GalleryGuru */,
 				D11480661F3A288100F2E34A /* Products */,
+				99254393A675E126E0E931E4 /* Pods */,
+				011EA8F68F057EFBA808E9B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,7 +185,6 @@
 		D1D2DE761F41F79C00EA0C5B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D1D2DE7A1F41F85300EA0C5B /* Data */,
 				D1D2DE791F41F7F000EA0C5B /* Storyboards */,
 				D114806F1F3A288100F2E34A /* Assets.xcassets */,
 			);
@@ -193,17 +210,6 @@
 			path = Resources/Storyboards;
 			sourceTree = "<group>";
 		};
-		D1D2DE7A1F41F85300EA0C5B /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				D11480841F3A2B7300F2E34A /* exhibitions.json */,
-				D11480851F3A2B7300F2E34A /* galleries.json */,
-				D11480861F3A2B7300F2E34A /* works.json */,
-			);
-			name = Data;
-			path = Resources/Data;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,9 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D11480771F3A288100F2E34A /* Build configuration list for PBXNativeTarget "GalleryGuru" */;
 			buildPhases = (
+				1B7DC65F5928FF7EC2664F81 /* [CP] Check Pods Manifest.lock */,
 				D11480611F3A288100F2E34A /* Sources */,
 				D11480621F3A288100F2E34A /* Frameworks */,
 				D11480631F3A288100F2E34A /* Resources */,
+				95AA9046D24A1EA5ED49D69B /* [CP] Embed Pods Frameworks */,
+				35AF5688AA40E53000207694 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,17 +273,68 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D11480891F3A2B7300F2E34A /* works.json in Resources */,
 				D11480731F3A288100F2E34A /* LaunchScreen.storyboard in Resources */,
 				D11480701F3A288100F2E34A /* Assets.xcassets in Resources */,
-				D11480871F3A2B7300F2E34A /* exhibitions.json in Resources */,
-				D11480881F3A2B7300F2E34A /* galleries.json in Resources */,
 				D17BD5151F49B2B400C1FB71 /* ExhibitionCell.xib in Resources */,
 				D114806E1F3A288100F2E34A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B7DC65F5928FF7EC2664F81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GalleryGuru-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35AF5688AA40E53000207694 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GalleryGuru/Pods-GalleryGuru-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95AA9046D24A1EA5ED49D69B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GalleryGuru/Pods-GalleryGuru-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GalleryGuru/Pods-GalleryGuru-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D11480611F3A288100F2E34A /* Sources */ = {
@@ -414,6 +474,7 @@
 		};
 		D11480781F3A288100F2E34A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9323044CACE621FD80CA3C4 /* Pods-GalleryGuru.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 39Z4HLUZUT;
@@ -427,6 +488,7 @@
 		};
 		D11480791F3A288100F2E34A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1FCF21D5062369B310BB544 /* Pods-GalleryGuru.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 39Z4HLUZUT;

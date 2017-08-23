@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-fb0a874f-043c-409f-9ab7-2c3e4d96d3af-2.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

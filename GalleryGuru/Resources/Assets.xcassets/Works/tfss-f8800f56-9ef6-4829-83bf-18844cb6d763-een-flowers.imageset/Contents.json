@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-f8800f56-9ef6-4829-83bf-18844cb6d763-een-flowers.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

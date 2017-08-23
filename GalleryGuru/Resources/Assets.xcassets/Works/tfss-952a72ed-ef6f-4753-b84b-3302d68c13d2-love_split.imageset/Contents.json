@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-952a72ed-ef6f-4753-b84b-3302d68c13d2-love_split.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

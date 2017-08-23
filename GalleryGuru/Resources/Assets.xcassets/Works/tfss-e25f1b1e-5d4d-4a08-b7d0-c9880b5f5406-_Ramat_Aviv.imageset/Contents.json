@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-e25f1b1e-5d4d-4a08-b7d0-c9880b5f5406-_Ramat_Aviv.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

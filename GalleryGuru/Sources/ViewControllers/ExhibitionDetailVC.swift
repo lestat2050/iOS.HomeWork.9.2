@@ -24,12 +24,12 @@ class ExhibitionDetailVC: UIViewController {
         super.viewDidLoad()
 
         navigationController?.setNavigationBarHidden(false, animated: true)
-        loadSelectedExhibition()
+        showSelectedExhibition()
     }
     
     // MARK: - Methods
     
-    private func loadSelectedExhibition() {
+    private func showSelectedExhibition() {
         if let selectedExhibition = selectedExhibition {
             exhibitionNameLabel.text = selectedExhibition.name
         }

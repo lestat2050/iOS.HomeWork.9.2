@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-4251d640-9562-4287-84f7-f587c33f27a8-gie_Azoulay.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-265a0818-91ca-4a52-a9e7-8f57e1c38b2d-michelen.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

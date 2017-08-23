@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-a7d45dd9-27bc-4087-9d48-8183e461ac6d-Paternoster.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

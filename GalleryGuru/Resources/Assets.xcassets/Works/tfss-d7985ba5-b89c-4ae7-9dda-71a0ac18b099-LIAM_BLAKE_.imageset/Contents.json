@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-d7985ba5-b89c-4ae7-9dda-71a0ac18b099-LIAM_BLAKE_.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

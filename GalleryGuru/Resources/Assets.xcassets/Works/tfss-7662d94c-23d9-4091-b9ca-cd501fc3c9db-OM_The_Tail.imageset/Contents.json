@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-7662d94c-23d9-4091-b9ca-cd501fc3c9db-OM_The_Tail.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

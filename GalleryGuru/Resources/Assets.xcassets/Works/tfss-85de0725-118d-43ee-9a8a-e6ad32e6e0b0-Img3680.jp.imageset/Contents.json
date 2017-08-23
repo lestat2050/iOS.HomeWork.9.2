@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-85de0725-118d-43ee-9a8a-e6ad32e6e0b0-Img3680.jp.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

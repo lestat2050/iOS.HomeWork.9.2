@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-1d471684-e6d2-4516-ba87-47dadd80ac18-_Baraksmall.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

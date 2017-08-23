@@ -18,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions:
         [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        UIApplication.shared.statusBarStyle = .lightContent
-        
         return true
     }
 

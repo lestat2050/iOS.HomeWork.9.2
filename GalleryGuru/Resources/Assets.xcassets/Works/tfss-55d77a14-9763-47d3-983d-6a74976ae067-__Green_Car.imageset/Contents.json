@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-55d77a14-9763-47d3-983d-6a74976ae067-__Green_Car.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

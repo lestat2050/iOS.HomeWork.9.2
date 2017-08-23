@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-448365b2-8279-4957-a8dc-62cd3e11f326-pr_sq800_tx.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

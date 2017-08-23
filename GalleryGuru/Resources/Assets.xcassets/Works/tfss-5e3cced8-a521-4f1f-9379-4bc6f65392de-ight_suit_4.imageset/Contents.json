@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "tfss-5e3cced8-a521-4f1f-9379-4bc6f65392de-ight_suit_4.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
