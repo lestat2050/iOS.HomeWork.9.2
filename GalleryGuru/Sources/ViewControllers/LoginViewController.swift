@@ -34,13 +34,6 @@ class LoginViewController: UIViewController {
     
     // MARK: - Properties
     
-    let loader = DataLoader()
-    let previewScreenImages = [
-        "previewScreen1",
-        "previewScreen2",
-        "previewScreen3"
-    ]
-    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -94,14 +87,4 @@ extension LoginViewController: UICollectionViewDataSource {
         return cell
     }
     
-}
-
-extension UIButton {
-    func underlineLabel(text: String) {
-        let titleString = NSMutableAttributedString(string: text)
-        titleString.addAttribute(NSUnderlineStyleAttributeName,
-                                 value: NSUnderlineStyle.styleSingle.rawValue,
-                                 range: NSMakeRange(0, text.characters.count))
-        self.setAttributedTitle(titleString, for: .normal)
-    }
 }
