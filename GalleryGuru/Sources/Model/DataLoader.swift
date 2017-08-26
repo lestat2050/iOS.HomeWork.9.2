@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
 
 class DataLoader {
     
@@ -25,55 +26,59 @@ class DataLoader {
                     let rawWorks = $0["works"] as? [[String: Any]]
                     
                     var gallery: Gallery? = nil
-                    var works: [Work] = []
+                    let works: List<Work> = List()
                     
                     if let rawWorks = rawWorks {
-                        works = rawWorks.map {
-                            
+                        rawWorks.forEach {
                             let rawImgPicture = $0["imgPicture"] as? [String: Any]
                             var imgPicture: String = ""
                             if let rawImgPicture = rawImgPicture {
                                 imgPicture = rawImgPicture["name"] as! String
                             }
+                            let work = Work()
+                            work.id = $0["objectId"] as! String
+                            work.size = $0["size"] as? String
+                            work.title = $0["title"] as? String
+                            work.imgPicture = imgPicture
+                            work.type = $0["type"] as? String
+                            work.author = $0["author"] as! String
+                            work.year = $0["year"] as? String
                             
-                            let work = Work(id: $0["objectId"] as! String,
-                                            size: $0["size"] as? String,
-                                            title: $0["title"] as? String,
-                                            imgPicture: imgPicture,
-                                            type: $0["type"] as? String,
-                                            author: $0["author"] as? String,
-                                            galleryDescription: $0["schedule"] as? String,
-                                            year: $0["year"] as? String)
-                            return work
+                            works.append(work)
                         }
                     }
                     
                     if let rawGallery = rawGallery {
-                        gallery = Gallery(id: rawGallery["objectId"] as! String,
-                                          name: rawGallery["name"] as! String,
-                                          galleryDescription: rawGallery["galleryDescription"] as? String,
-                                          email: rawGallery["email"] as? String,
-                                          facebook: rawGallery["facebook"] as? String,
-                                          city: rawGallery["city"] as? String,
-                                          schedule: rawGallery["schedule"] as? [String],
-                                          address: rawGallery["address"] as? String,
-                                          galleryLogo: rawGallery["galleryLogo"] as? String,
-                                          link: rawGallery["link"] as? String,
-                                          phone: rawGallery["phone"] as? String,
-                                          latitude: rawGallery["latitude"] as? String,
-                                          longitude: rawGallery["longitude"] as? String)
+                        gallery = Gallery()
+                        gallery?.id = rawGallery["objectId"] as! String
+                        gallery?.name = rawGallery["name"] as! String
+                        gallery?.galleryDescription = rawGallery["galleryDescription"] as? String
+                        gallery?.email = rawGallery["email"] as? String
+                        gallery?.facebook = rawGallery["facebook"] as? String
+                        gallery?.city = rawGallery["city"] as? String
+                        gallery?.address = rawGallery["address"] as? String
+                        gallery?.galleryLogo = rawGallery["galleryLogo"] as? String
+                        gallery?.link = rawGallery["link"] as? String
+                        gallery?.phone = rawGallery["phone"] as? String
+                        gallery?.latitude = rawGallery["latitude"] as? String
+                        gallery?.longitude = rawGallery["longitude"] as? String
                     }
                     
-                    let exhibition = Exhibition(id:$0["objectId"] as! String,
-                                                authorName: $0["authorName"] as? String,
-                                                gallery: gallery,
-                                                name: $0["name"] as! String,
-                                                authorDescription: $0["authorDescription"] as? String,
-                                                dateStart: Date.from(dateString: $0["dateStart"] as? String),
-                                                about: $0["about"] as? String,
-                                                dataEnd: Date.from(dateString: $0["dateEnd"] as? String),
-                                                works: works,
-                                                likesCount: $0["likesCount"] as? Int ?? 0)
+                    let exhibition = Exhibition()
+                    exhibition.id = $0["objectId"] as! String
+                    exhibition.authorName = $0["authorName"] as! String
+                    exhibition.gallery = gallery
+                    exhibition.name = $0["name"] as! String
+                    exhibition.authorDescription = $0["authorDescription"] as! String
+                    exhibition.dateStart = Date.from(dateString: $0["dateStart"] as? String)
+                    exhibition.about = $0["about"] as! String
+                    exhibition.dataEnd = Date.from(dateString: $0["dateEnd"] as? String)
+                    exhibition.works = works
+                    let rawLikesCount = $0["likesCount"] as? Int
+                    if let likesCount = rawLikesCount {
+                        exhibition.likesCount = RealmOptional(likesCount)
+                    }
+                    
                     return exhibition
                 }
                 

@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LoadingVC: UIViewController {
 
     // MARK: - Prorerties
     
     private let loader = DataLoader()
+    private let saver = DataSaver()
+    private var isLoadingFromDatabase: Bool = false
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -23,14 +26,30 @@ class LoadingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadData()
+        loadDataFromDatabase()
+        loadDataFromSite()
     }
     
     // MARK: - Methods
     
-    func loadData() -> Void {
+    private func loadDataFromDatabase() -> Void {
+        let exhibitionsFromDatabase = saver.exhibitions
+        let exhibitions: [Exhibition]
+        if !exhibitionsFromDatabase.isEmpty {
+            isLoadingFromDatabase = true
+            exhibitions = Array(exhibitionsFromDatabase)
+            show(exhibitions)
+        }
+    }
+    
+    private func loadDataFromSite() -> Void {
         loader.loadExhibitions { (exhibitions: [Exhibition]) in
-            self.show(exhibitions)
+            if !self.isLoadingFromDatabase {
+                self.show(exhibitions)
+            }
+            exhibitions.forEach {
+                self.saver.add($0)
+            }
         }
     }
     

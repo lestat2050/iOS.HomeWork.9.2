@@ -28,6 +28,7 @@
 		D17BD5171F4A0FFC00C1FB71 /* ExhibitionCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BD5161F4A0FFC00C1FB71 /* ExhibitionCellConfigurator.swift */; };
 		D17BD51A1F4A105100C1FB71 /* DataViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BD5191F4A105100C1FB71 /* DataViewable.swift */; };
 		D17BD51C1F4A17CC00C1FB71 /* ExhibitionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BD51B1F4A17CC00C1FB71 /* ExhibitionDetailVC.swift */; };
+		D18954FB1F50B72400BA0CBD /* DataSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18954FA1F50B72400BA0CBD /* DataSaver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		D17BD5161F4A0FFC00C1FB71 /* ExhibitionCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitionCellConfigurator.swift; sourceTree = "<group>"; };
 		D17BD5191F4A105100C1FB71 /* DataViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewable.swift; sourceTree = "<group>"; };
 		D17BD51B1F4A17CC00C1FB71 /* ExhibitionDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitionDetailVC.swift; sourceTree = "<group>"; };
+		D18954FA1F50B72400BA0CBD /* DataSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSaver.swift; sourceTree = "<group>"; };
 		F1FCF21D5062369B310BB544 /* Pods-GalleryGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GalleryGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-GalleryGuru/Pods-GalleryGuru.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				D114808B1F3A2B9F00F2E34A /* DataLoader.swift */,
+				D18954FA1F50B72400BA0CBD /* DataSaver.swift */,
 				D16CC0541F4EDDAE00B6DC3A /* PreviewImages.swift */,
 			);
 			name = Model;
@@ -342,10 +345,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GalleryGuru/Pods-GalleryGuru-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -367,6 +374,7 @@
 				D114807D1F3A29C500F2E34A /* Exhibition.swift in Sources */,
 				D16CC0551F4EDDAE00B6DC3A /* PreviewImages.swift in Sources */,
 				D17BD51A1F4A105100C1FB71 /* DataViewable.swift in Sources */,
+				D18954FB1F50B72400BA0CBD /* DataSaver.swift in Sources */,
 				D16CC0531F4EDCFD00B6DC3A /* Date.swift in Sources */,
 				D114807F1F3A29DA00F2E34A /* Gallery.swift in Sources */,
 				D17BD5141F49B2B400C1FB71 /* ExhibitionCell.swift in Sources */,

@@ -7,33 +7,23 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Exhibition {
+class Exhibition: Object {
  
-    let id: String
-    let authorName: String?
-    let gallery: Gallery?
-    let name: String
-    let authorDescription: String?
-    let dateStart: Date?
-    let about: String?
-    let dataEnd: Date?
-    let works: [Work]
-    let likesCount: Int
+    dynamic var id: String = ""
+    dynamic var authorName: String = ""
+    dynamic var gallery: Gallery? = nil
+    dynamic var name: String = ""
+    dynamic var authorDescription: String = ""
+    dynamic var dateStart: Date? = nil
+    dynamic var about: String = ""
+    dynamic var dataEnd: Date? = nil
+    var works: List<Work> = List()
+    var likesCount = RealmOptional<Int>()
     
-    init(id: String, authorName: String?, gallery: Gallery?, name: String,
-         authorDescription: String? = nil, dateStart: Date?, about: String?,
-         dataEnd: Date?, works: [Work] = [], likesCount: Int = 0) {
-        self.id = id
-        self.authorName = authorName
-        self.gallery = gallery
-        self.name = name
-        self.authorDescription = authorDescription
-        self.dateStart = dateStart
-        self.about = about
-        self.dataEnd = dataEnd
-        self.works = works
-        self.likesCount = likesCount
+    override static func primaryKey() -> String? {
+        return "id"
     }
     
 }

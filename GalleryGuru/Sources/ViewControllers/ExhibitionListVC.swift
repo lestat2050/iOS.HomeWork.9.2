@@ -17,6 +17,8 @@ class ExhibitionListVC: UIViewController {
     // MARK: - Properties
     
     let exhibitionDetailSegueID = "exhibitionDetailSegueID"
+    private let saver = DataSaver()
+    
     var exhibitions: [Exhibition] = []
     var selectedExhibition: Exhibition?
     
@@ -30,6 +32,8 @@ class ExhibitionListVC: UIViewController {
         super.viewDidLoad()
 
         configurateExhibitionVC()
+        subscribeOnChanges()
+        saver.subscribeOnChanges()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +54,13 @@ class ExhibitionListVC: UIViewController {
     }
     
     // MARK: - Methods
+    
+    private func subscribeOnChanges() {
+        NotificationCenter.default.addObserver(forName: saver.updateNotificationName,
+                                               object: nil, queue: nil) { _ in
+            self.exhibitionListTableView.reloadData()
+        }
+    }
     
     private func configurateExhibitionVC() {
         exhibitionListTableView.dataSource = self

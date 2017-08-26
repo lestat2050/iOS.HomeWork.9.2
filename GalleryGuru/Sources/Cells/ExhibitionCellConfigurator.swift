@@ -19,7 +19,9 @@ class ExhibitionCellConfigurator {
         guard let model = model as? Exhibition else {
             fatalError("Not right model")
         }
-        if !model.works.isEmpty, let imageName = model.works[0].imgPicture {
+
+        if !model.works.isEmpty {
+            let imageName = model.works[0].imgPicture
             cell.exhibitionImage.image = UIImage(named: imageName)
         }
         cell.galleryNameLabel.text = model.gallery?.name
