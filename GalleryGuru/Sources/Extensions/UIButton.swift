@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIButton {
+    
     func underlineLabel(text: String) {
         let titleString = NSMutableAttributedString(string: text)
         titleString.addAttribute(NSUnderlineStyleAttributeName,
@@ -16,4 +17,5 @@ extension UIButton {
                                  range: NSMakeRange(0, text.characters.count))
         self.setAttributedTitle(titleString, for: .normal)
     }
+    
 }

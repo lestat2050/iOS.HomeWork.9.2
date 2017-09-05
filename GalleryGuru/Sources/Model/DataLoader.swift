@@ -12,8 +12,6 @@ import RealmSwift
 
 class DataLoader {
     
-    let exhibitionsRef = "https://gallery-guru-prod.herokuapp.com/exhibitions/"
-    
     typealias ExibitionsLoadHandler = (_ exhibitions: [Exhibition]) -> Void
     
     func loadExhibitions(handler: @escaping ExibitionsLoadHandler) {
@@ -57,7 +55,18 @@ class DataLoader {
                         gallery?.facebook = rawGallery["facebook"] as? String
                         gallery?.city = rawGallery["city"] as? String
                         gallery?.address = rawGallery["address"] as? String
-                        gallery?.galleryLogo = rawGallery["galleryLogo"] as? String
+                        if let rawGalleryLogo = rawGallery["galleryLogo"] as? [String: Any] {
+                            gallery?.galleryLogo = rawGalleryLogo["name"] as? String
+                        }
+                        let rawSchedule = rawGallery["schedule"] as? [Any]
+                        if let rawSchedule = rawSchedule {
+                            if let schedule0 = rawSchedule[0] as? String {
+                                gallery?.scheduleWeekdays = schedule0
+                            }
+                            if let schedule1 = rawSchedule[1] as? String {
+                                gallery?.scheduleWeekend = schedule1
+                            }
+                        }
                         gallery?.link = rawGallery["link"] as? String
                         gallery?.phone = rawGallery["phone"] as? String
                         gallery?.latitude = rawGallery["latitude"] as? String
@@ -70,14 +79,21 @@ class DataLoader {
                     exhibition.gallery = gallery
                     exhibition.name = $0["name"] as! String
                     exhibition.authorDescription = $0["authorDescription"] as! String
-                    exhibition.dateStart = Date.from(dateString: $0["dateStart"] as? String)
+                    let rawDateStart = $0["dateStart"] as? [String: Any]
+                    if let rawDateStart = rawDateStart {
+                        exhibition.dateStart = Date.from(dateString: rawDateStart["iso"] as? String)
+                    }
+                    let rawDateEnd = $0["dateEnd"] as? [String: Any]
+                    if let rawDateEnd = rawDateEnd{
+                        exhibition.dateEnd = Date.from(dateString: rawDateEnd["iso"] as? String)
+                    }
                     exhibition.about = $0["about"] as! String
-                    exhibition.dataEnd = Date.from(dateString: $0["dateEnd"] as? String)
                     exhibition.works = works
                     let rawLikesCount = $0["likesCount"] as? Int
                     if let likesCount = rawLikesCount {
                         exhibition.likesCount = RealmOptional(likesCount)
                     }
+                    exhibition.links = $0["links"] as? String
                     
                     return exhibition
                 }

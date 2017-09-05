@@ -18,7 +18,8 @@ class Exhibition: Object {
     dynamic var authorDescription: String = ""
     dynamic var dateStart: Date? = nil
     dynamic var about: String = ""
-    dynamic var dataEnd: Date? = nil
+    dynamic var links: String? = ""
+    dynamic var dateEnd: Date? = nil
     var works: List<Work> = List()
     var likesCount = RealmOptional<Int>()
     

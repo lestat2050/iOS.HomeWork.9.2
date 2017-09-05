@@ -10,8 +10,6 @@ import Foundation
 import RealmSwift
 
 class DataSaver {
-
-    let updateNotificationName = Notification.Name("OnExhibitionModelUpdated")
     
     var exhibitions: Results<Exhibition>
     private var token: NotificationToken?
@@ -35,7 +33,7 @@ class DataSaver {
     }
     
     private func sendNotificationAboutUpdateModel() {
-        NotificationCenter.default.post(name: updateNotificationName,
+        NotificationCenter.default.post(name: exhibitionUpdateNotificationName,
                                         object: nil)
     }
 

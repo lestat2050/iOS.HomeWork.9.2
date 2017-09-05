@@ -23,5 +23,7 @@ class Gallery: Object {
     dynamic var phone: String? = ""
     dynamic var latitude: String? = ""
     dynamic var longitude: String? = ""
+    dynamic var scheduleWeekdays: String? = ""
+    dynamic var scheduleWeekend: String? = ""
     
 }
