@@ -10,10 +10,10 @@ import UIKit
 
 class ExhibitionCell: UITableViewCell {
 
-    @IBOutlet weak var exhibitionImage: UIImageView!
-    @IBOutlet weak var galleryNameLabel: UILabel!
-    @IBOutlet weak var exhibitionNameLabel: UILabel!
-    @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet private(set) weak var exhibitionImage: UIImageView!
+    @IBOutlet private(set) weak var galleryNameLabel: UILabel!
+    @IBOutlet private(set) weak var exhibitionNameLabel: UILabel!
+    @IBOutlet private(set) weak var authorNameLabel: UILabel!
     
     static let identifier: String = String(describing: ExhibitionCell.self)
     

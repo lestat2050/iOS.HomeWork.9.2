@@ -32,6 +32,7 @@ class ExhibitionInfoViewController: UIViewController {
     @IBOutlet private(set) weak var galleryDescriptionView: UIView!
     @IBOutlet private(set) weak var detailButtonView: UIView!
     @IBOutlet private(set) weak var detailButton: UIButton!
+    @IBOutlet private(set) weak var worksCollectionView: UICollectionView!
     
     // MARK: - Properties
     
@@ -52,6 +53,7 @@ class ExhibitionInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        worksCollectionView.dataSource = self
         configurateNavigatinBar()
         showSelectedExhibition()
         hideExhibitionDetailView()
@@ -125,4 +127,29 @@ class ExhibitionInfoViewController: UIViewController {
     }
 
 }
+
+extension ExhibitionInfoViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let selectedExhibition = selectedExhibition {
+            return selectedExhibition.works.count
+        }
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkCell.identifier,
+                                                      for: indexPath) as! WorkCell
+        var works: [Work] = []
+        if let selectedExhibition = selectedExhibition {
+            works = Array(selectedExhibition.works)
+        }
+        
+        cell.workImageView.image = UIImage(named: works[indexPath.row].imgPicture)
+        return cell
+    }
+    
+}
+
+
 

@@ -17,6 +17,7 @@
 		D11480811F3A29E700F2E34A /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11480801F3A29E700F2E34A /* Work.swift */; };
 		D114808C1F3A2B9F00F2E34A /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114808B1F3A2B9F00F2E34A /* DataLoader.swift */; };
 		D114808E1F3A2FD800F2E34A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114808D1F3A2FD800F2E34A /* LoginViewController.swift */; };
+		D15B54531F5E9DF600E06623 /* WorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15B54521F5E9DF600E06623 /* WorkCell.swift */; };
 		D15ECA2F1F3EED06001F8381 /* PreviewScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15ECA2E1F3EED06001F8381 /* PreviewScreenCell.swift */; };
 		D16CC0511F4EDCE900B6DC3A /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16CC0501F4EDCE900B6DC3A /* UIButton.swift */; };
 		D16CC0531F4EDCFD00B6DC3A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16CC0521F4EDCFD00B6DC3A /* Date.swift */; };
@@ -46,6 +47,7 @@
 		D11480801F3A29E700F2E34A /* Work.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
 		D114808B1F3A2B9F00F2E34A /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		D114808D1F3A2FD800F2E34A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D15B54521F5E9DF600E06623 /* WorkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCell.swift; sourceTree = "<group>"; };
 		D15ECA2E1F3EED06001F8381 /* PreviewScreenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewScreenCell.swift; sourceTree = "<group>"; };
 		D16CC0501F4EDCE900B6DC3A /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButton.swift; path = Sources/Extensions/UIButton.swift; sourceTree = "<group>"; };
 		D16CC0521F4EDCFD00B6DC3A /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Sources/Extensions/Date.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				D15ECA2E1F3EED06001F8381 /* PreviewScreenCell.swift */,
 				D17BD5121F49B2B400C1FB71 /* ExhibitionCell.swift */,
+				D15B54521F5E9DF600E06623 /* WorkCell.swift */,
 				D15B54511F5E760900E06623 /* Configurator */,
 				D15B54501F5E752D00E06623 /* XIB */,
 			);
@@ -399,6 +402,7 @@
 				D17BD50F1F49AE9B00C1FB71 /* LoadingVC.swift in Sources */,
 				D114808C1F3A2B9F00F2E34A /* DataLoader.swift in Sources */,
 				D11480811F3A29E700F2E34A /* Work.swift in Sources */,
+				D15B54531F5E9DF600E06623 /* WorkCell.swift in Sources */,
 				D114807D1F3A29C500F2E34A /* Exhibition.swift in Sources */,
 				D16CC0551F4EDDAE00B6DC3A /* PreviewImages.swift in Sources */,
 				D17BD51A1F4A105100C1FB71 /* DataViewable.swift in Sources */,
