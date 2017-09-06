@@ -59,6 +59,11 @@ class ExhibitionInfoViewController: UIViewController {
         hideExhibitionDetailView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     // MARK: - Actions
     
     @IBAction func switchVisibilityExhibitionDetail(_ sender: UIButton) {
@@ -68,11 +73,10 @@ class ExhibitionInfoViewController: UIViewController {
             rotationAngle = CGFloat.pi
         }
         
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.detailButton.transform = CGAffineTransform(rotationAngle: rotationAngle)
             self.exhibitionDetailView.isHidden = !self.exhibitionDetailView.isHidden
             self.galleryDescriptionView.isHidden = !self.galleryDescriptionView.isHidden
-            self.view.layoutIfNeeded()
         })
     }
     
@@ -94,7 +98,6 @@ class ExhibitionInfoViewController: UIViewController {
     private func hideExhibitionDetailView() {
         exhibitionDetailView.isHidden = true
         galleryDescriptionView.isHidden = true
-        self.view.layoutIfNeeded()
     }
     
     private func showSelectedExhibition() {

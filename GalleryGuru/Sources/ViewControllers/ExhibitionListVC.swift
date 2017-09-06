@@ -70,7 +70,6 @@ class ExhibitionListVC: UIViewController {
     private func configurateExhibitionVC() {
         exhibitionListTableView.dataSource = self
         exhibitionListTableView.delegate = self
-        exhibitionListTableView.rowHeight = UITableViewAutomaticDimension
         exhibitionListTableView.register(UINib(nibName: ExhibitionCell.identifier,
                                                bundle: nil),
                                          forCellReuseIdentifier: ExhibitionCell.identifier)
@@ -80,9 +79,8 @@ class ExhibitionListVC: UIViewController {
 
 extension ExhibitionListVC: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView,
-                   estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.frame.size.width
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
